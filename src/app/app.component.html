@@ -1,0 +1,13 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">SIMPLE CRUD MEAN APPLICATION</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class=""><a href="/">Home</a></li>
+      <li class=""><a [routerLink]="['/posts']">All Posts</a></li>
+      <li class=""><a [routerLink]="['/post-create']">Add a Post</a></li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>

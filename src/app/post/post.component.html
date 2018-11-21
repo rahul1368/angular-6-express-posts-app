@@ -1,0 +1,36 @@
+<div class="container">
+  <h1> All Posts
+    <a [routerLink]="['/post-create']" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </a>
+  </h1>
+  <div class="alert alert-success" >{{ notification }}</div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Publisher</th>
+        <th>Post</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+        <th>Votes</th>
+        <th>Upvote</th>
+        <th>Downvote</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts">
+        <td>{{ post.title }}</td>
+        <td>{{ post.publisher }}</td>
+        <td>{{ post.post_text }}</td>
+        <td>{{ post.created_at | date:'short'}}</td>
+        <td>{{ post.updated_date | date:'short' }}</td>
+        <td>{{ post.votes }}</td>
+        <td><a type="button" class="btn btn-success" (click)="upvotePost(post._id)">Upvote</a></td>
+        <td><a type="button" class="btn btn-danger" (click)="downvotePost(post._id)">Downvote</a></td>
+        <td><a [routerLink]="['/post-details', post._id]">Show Detail</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,25 @@
+
+<div class="container">
+  <h1>{{ post.title }}</h1>
+  <dl class="list">
+    <dt>Publisher</dt>
+    <dd>{{ post.publisher }}</dd>
+    <dt>Post Text</dt>
+    <dd>{{ post.post_text }}</dd>
+    <dt>Created Date</dt>
+    <dd>{{ post.created_at | date:'short' }}</dd>
+    <dt>Update Date</dt>
+    <dd>{{ post.updated_date | date:'short' }}</dd>
+  </dl>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a [routerLink]="['/post-edit', post._id]" class="btn btn-lg btn-success">EDIT</a>
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-lg btn-danger" type="button" (click)="deletePost(post._id)">DELETE</button>
+    </div>
+  </div>
+  
+</div>
+
