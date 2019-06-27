@@ -10,7 +10,11 @@ const app = express();
 console.log(config);
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://'+config.parsed.MONGO_USERNAME+':'+config.parsed.MONGO_PASSWORD+'@ds157503.mlab.com:57503/posts', { useMongoClient: true, promiseLibrary: require('bluebird') })
+// mongoose.connect('mongodb://'+config.parsed.MONGO_USERNAME+':'+config.parsed.MONGO_PASSWORD+'@ds157503.mlab.com:57503/posts', { useMongoClient: true, promiseLibrary: require('bluebird') })
+//   .then(() =>  console.log('connection succesful'))
+//   .catch((err) => console.error(err));
+//For local Connection
+mongoose.connect('mongodb://localhost:27017/posts', { useMongoClient: true, promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
